@@ -1,6 +1,7 @@
 import express, { Application, json, urlencoded } from "express";
 import helmet from "helmet";
 import compression from "compression";
+import cors from "cors";
 import { connect } from "mongoose";
 import cookieParser from "cookie-parser";
 import endpoints from "./utils/endpoints";
@@ -27,6 +28,7 @@ class App {
     this.app.use(urlencoded({ extended: false }));
     this.app.use(compression()); // compress
     this.app.use(helmet()); // helmet
+    this.app.use(cors()); // cors
     this.app.use(cookieParser()); // cookies
     passportController(); // setup passport
     this.app.use(passport.initialize());
