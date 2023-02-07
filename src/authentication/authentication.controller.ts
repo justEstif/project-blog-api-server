@@ -16,7 +16,7 @@ import HttpException from "../exception/HttpException";
 import WrongCredentialsException from "../exception/WrongCredentialsException";
 
 class AuthenticationController implements IController {
-  public path = "/";
+  public path = "/auth";
   public path_register = `${this.path}/register`;
   public path_login = `${this.path}/login`;
   public path_logout = `${this.path}/logout`;
